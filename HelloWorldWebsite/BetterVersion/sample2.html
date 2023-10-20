@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="./scmain.js"></script> -->
+</head>
+
+<body>
+    <label>Year you were born: <input type="number" id="yearBornField" value="2000" /></label>
+    <br>
+
+    <label> Age on Dec 31 <input type="text" id="ageField" readonly /></label>
+    <br>
+    <input type="button" id="findAgeBtn" value="Find Your Age" />
+    <br>
+
+
+</body>
+<script>
+    const findAgeBtn = document.getElementById("findAgeBtn");
+    const yearBornField = document.getElementById("yearBornField");
+    
+    function findAge() {
+
+        let yearBorn = Number(yearBornField.value);
+        let currentYear = 2023;
+        let ageAtYearEnd = currentYear - yearBorn;
+        const ageField = document.getElementById("ageField");
+
+        ageField.value = ageAtYearEnd;
+    }
+    findAgeBtn.onclick = findAge;
+</script>
+
+</html>

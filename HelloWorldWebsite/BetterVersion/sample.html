@@ -1,20 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-   <label>Name
-        
-        <input type="text" id="nameField"/>
+
+    <label>Name
+
+        <input type="text" id="nameField" />
     </label>
     <br>
-    <label >age <input type="number" id="ageField"></label>
+    <label>age <input type="number" id="ageField"></label>
     <br>
-    <button type="button" id="clickMe" value="ShowMe"> clickMe</button>
+    <input type="button" id="showbtn" value="Show" />
     <br>
-    scr
+ <div id="messagePara"></div> 
 </body>
+<script>
+    showbtn.onclick = onshow;
+    function onshow() {
+        const nameField = document.getElementById("nameField");
+        const ageField = document.getElementById("ageField");
+        let name = nameField.value;
+        let age = ageField.value; // age is a string here
+        
+            message = `Hi ${name}! I hear you are ${age} years old!`;
+        const messagePara = document.getElementById("messagePara");
+        messagePara.innerHTML = message
+        console.log(message)
+    }
+</script>
+
 </html>
